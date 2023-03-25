@@ -107,7 +107,7 @@ bool memory_manager_init(memory_manager_t * memory_manager, void * heap, size_t 
  * @param size Size of memory to alloc
  * @return void* Allocated memory if it was not (void *)0
  */
-void * memory_manager_malloc(memory_manager_t * memory_manager, size_t size)
+void * memory_manager_alloc(memory_manager_t * memory_manager, size_t size)
 {
 #define IS_SIZE_WITHIN_RANGE(size)      (((size & memory_block_allocated_bit) == 0) ? true : false)
 #define IS_SIZE_GREATER_THAN_ZERO(size) ((size > 0) ? true : false)

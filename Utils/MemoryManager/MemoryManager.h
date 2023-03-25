@@ -26,7 +26,7 @@ typedef struct memory_manager
 } memory_manager_t;
 
 bool memory_manager_init(memory_manager_t * memory_manager, void * heap, size_t size);
-void * memory_manager_malloc(memory_manager_t * memory_manager, size_t size);
+void * memory_manager_alloc(memory_manager_t * memory_manager, size_t size);
 void memory_manager_free(memory_manager_t * memory_manager, void * memory);
 size_t memory_manager_get_free_remain(memory_manager_t * memory_manager);
 #if (CONFIG_RECORD_MINIMUM_FREE_REMAIN != 0)
