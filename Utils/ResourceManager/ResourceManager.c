@@ -1,6 +1,6 @@
 #include "ResourceManager.h"
 #include <string.h>
-#include <stdlib.h>
+#include RESOURCE_MANAGER_MEMORY_INCLUDE
 
 /**
  * @brief Search resource node by name
@@ -61,12 +61,12 @@ bool resource_manager_add(resource_manager_t * resource_manager, char * name, vo
         return false;
     }
 
-    if (true == resource_node_search(resource_manager, name, (resource_node_t **)0))
+    if (resource_node_search(resource_manager, name, (resource_node_t **)0) == true)
     {
         return false;
     }
 
-    resource_node = (resource_node_t *)malloc(sizeof(resource_node_t));
+    resource_node = (resource_node_t *)RESOURCE_MANAGER_MEMORY_ALLOC(sizeof(resource_node_t));
     if (resource_node == (resource_node_t *)0)
     {
         return false;
@@ -96,13 +96,13 @@ bool resource_manager_remove(resource_manager_t * resource_manager, char * name)
         return false;
     }
 
-    if (false == resource_node_search(resource_manager, name, &resource_node))
+    if (resource_node_search(resource_manager, name, &resource_node) == false)
     {
         return false;
     }
 
     list_del(&resource_node->node);
-    free(resource_node);
+    RESOURCE_MANAGER_MEMORY_FREE(resource_node);
 
     return true;
 }
@@ -123,7 +123,7 @@ void * resource_manager_get(resource_manager_t * resource_manager, char * name)
         return (void *)0;
     }
 
-    if (false == resource_node_search(resource_manager, name, &resource_node))
+    if (resource_node_search(resource_manager, name, &resource_node) == false)
     {
         return (void *)0;
     }
