@@ -1,7 +1,7 @@
 #ifndef __MEMORY_MANAGER_H
 #define __MEMORY_MANAGER_H
 
-#include "./Utils/List/List.h"
+#include "Utils/List/List.h"
 #include <stddef.h>
 #include <stdbool.h>
 

@@ -1,7 +1,7 @@
 #ifndef __MEMORY_H
 #define __MEMORY_H
 
-#include "./Utils/MemoryManager/MemoryManager.h"
+#include "Utils/MemoryManager/MemoryManager.h"
 
 #define CONFIG_MEMORY_HEAP_SIZE (10 * 1024)
 

@@ -1,10 +1,10 @@
 #ifndef __RESOURCE_MANAGER_H
 #define __RESOURCE_MANAGER_H
 
-#include "./Utils/List/List.h"
+#include "Utils/List/List.h"
 #include <stdbool.h>
 
-#define RESOURCE_MANAGER_MEMORY_INCLUDE "./App/Memory/Memory.h"
+#define RESOURCE_MANAGER_MEMORY_INCLUDE "App/Memory/Memory.h"
 #define RESOURCE_MANAGER_MEMORY_ALLOC   memory_alloc
 #define RESOURCE_MANAGER_MEMORY_FREE    memory_free
 typedef struct resource_node
