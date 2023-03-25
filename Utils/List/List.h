@@ -1,16 +1,15 @@
 #ifndef __LIST_H
 #define __LIST_H
 
+#include <stddef.h>
+
 typedef struct list_node
 {
     struct list_node * prev;
     struct list_node * next;
 } list_node_t;
 
-/* For 32-bits host */
-// #define GET_NODE_OWNER(node, owner_type, owner_member)  ((owner_type *)((char *)(node) - (unsigned long)(&((owner_type *)0)->owner_member)))
-/* For 64-bits host */
-#define GET_NODE_OWNER(node, owner_type, owner_member)  ((owner_type *)((char *)(node) - (unsigned long long)(&((owner_type *)0)->owner_member)))
+#define GET_NODE_OWNER(node, owner_type, owner_member)  ((owner_type *)((size_t)(node) - (size_t)(&((owner_type *)0)->owner_member)))
 
 /**
  * @brief Initialize list
